@@ -5,13 +5,64 @@
     <meta charset="UTF-8">
     <link rel= 'stylesheet' href = "index.css">
     <title> Weather Tracker</title>
-
 </head>
 
 <body>
-    <h1> Something to show up on the page lol</h1>
+    <h1 class="header"> Weather Dashboard</h1>
 
-    <p> This is a p tag that will be changed through DOM manipulation</p>
+<div class="Content">
+
+    <div class="search-feature">
+        <h2 for="city" class="label"> Search for a City:</h2>
+        <input class='text-input' id='city' type='text'placeholder='San Diego'/><br>
+        <button class="search">Search</button>
+    </div>  
+
+
+
+
+    <div class="weather">
+        <div id ="current-day">
+            <div id="day-banner" class="banner">
+                <h2>City Nam</h2>
+                <h2> &nbsp; Date &nbsp;</h2>
+                <h2> Weather Icon </h2>
+            </div>
+
+            <p> Temp </p>
+            <p> Wind </p>
+            <p> Humidity </p>
+        </div>
+        <h3> 5-Day Forcast:</h3>
+        <div class="five-day-forcast">
+            <div class="dayForcast">
+                <p> Date</p>
+                <p> Icon</p>
+                <p> Temp</p>
+                <p> Humidity</p>
+            </div>
+            <div class="dayForcast">
+                <p> Date</p>
+                <p> Icon</p>
+                <p> Temp</p>
+                <p> Humidity</p>
+            </div>
+            <div class="dayForcast">
+                <p> Date</p>
+                <p> Icon</p>
+                <p> Temp</p>
+                <p> Humidity</p>
+            </div>
+            <div class="dayForcast">
+                <p> Date</p>
+                <p> Icon</p>
+                <p> Temp</p>
+                <p> Humidity</p>
+            </div>
+        </div>
+    </div>
+</div>
+
 </body>
 
 <script src="index.js"></script>
