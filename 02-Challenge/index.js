@@ -1,16 +1,16 @@
 const currentDay = document.getElementById('current-day');
 const fiveDayForcast = document.getElementsByClassName('dayForcast');
 var apiData;
-var cityName = cityName;
 var button = document.getElementById("search");
+var searchHistoryDiv = document.getElementsByClassName('searchHistory')[0];
 
 
 //gets the promised object outside of the promise itself
 const sortURL = async(promise) => {
     const jsonApi = await promise;
     console.log(jsonApi);
-    apiData = jsonApi;
 
+    
     document.getElementsByTagName('h2')[1].innerHTML = jsonApi.city.name;
     console.log(fiveDayForcast);
 
@@ -22,7 +22,7 @@ const sortURL = async(promise) => {
 }
 
 //returns a promise with an object 
-function getApi(){
+function getApi(cityName){
     const requestUrl = `https://api.openweathermap.org/data/2.5/forecast?q=` + cityName + `&appid=f7bb730c061711d735ea4290bb9a1390`;
 
     //fetches information from the url
@@ -36,17 +36,12 @@ function getApi(){
         sortURL(testString);
     }
 
-    //method that gets city name from text box
 
-    function getCityName(){
-        cityName = document.getElementById('city').value;
-        getApi();
-    }
 
-    button.addEventListener("click", getCityName);
     
     var temp = kelvinToFarenheit(289.78);
     console.log(temp);
+
 
     //===========================================================================================================
     //HELPER FUNCTIONS :
@@ -98,13 +93,37 @@ function getApi(){
     }
 
 
+        
+    function onButtonClick(){
+    const button = document.querySelector('Button');
+    button.addEventListener('click', () => {
+        var cityNameFromElement = document.getElementById('city').value;
+        getApi(cityNameFromElement);
+
+        createNewButton(cityNameFromElement);
+    });
+
+}
+
+
+    function createNewButton(cityValue) {
+        var newButton = document.createElement('button');
+        newButton.addEventListener('click',() => {
+            getApi(cityValue)
+        });
+        newButton.innerHTML = cityValue; 
+        searchHistoryDiv.appendChild(newButton);
+        newButton.classList.add("newButton");
+    }
+
+
 /*function fetch(url)
 {
-    return new APIPromise((resolve, reject){
+    return new APIPromise((resolve, reject)){
 
-    resolve(respo)
-    })
+    resolve(respo);
+    }
     
 }*/
 
-//'https://api.openweathermap.org/data/3.0/onecall?lat=33.44&lon=-94.04&appid={API key}'
+'https://api.openweathermap.org/data/3.0/onecall?lat=33.44&lon=-94.04&appid={API key}'

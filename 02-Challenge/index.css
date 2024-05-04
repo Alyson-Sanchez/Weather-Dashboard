@@ -6,8 +6,8 @@
 }
 
 .weather{
-    width: 80%;
-    float:right;
+    width: 70%;
+    display: inline-block;
     padding-right: 20px;
     padding-left: 20px;
 }
@@ -15,18 +15,33 @@
 .weather h3{
     padding-top: 20px;
 }
+
 .search{
     background-color:#6991E3;
-    width: 82%;
+    width: 100%;
     color: white;
     border: none;
+    padding: 5px;
+    border-radius: 4px;
+    font-size: medium;
+    margin-bottom: 5px;
 }
 .search-feature{
-    width: 20%;
+    width: 30%;
     float: left;
-    padding: 20px;
-    border-bottom: solid 2px;
-    border-color: grey;
+    align-self: stretch;
+    padding: 5px;
+    padding-left: none;
+}
+
+.search-feature h2{
+    font-size: 30px;
+}
+#city{
+    padding: 10px;
+    width: 100%;
+    font-size:medium;
+    margin-bottom: 10px;
 }
 
 body{
@@ -60,6 +75,9 @@ body{
     align-items: stretch;
     
 }
+#current-day h2{
+    margin-bottom: none;
+}
 .dayForcast {
     width: 25%;
     background-color:#323D4F;
@@ -73,3 +91,26 @@ body{
     font-size:large;
 
 }
+
+.searchHistory{
+    width: 100%;
+    border-top: solid 2px;
+    border-color: grey;
+    margin-top: 3%;
+    padding-top: 3%;
+    padding-bottom: 3%;
+}
+
+.newButton{
+    display: block;
+    width: 100%;
+    background-color: #AEAEAE;
+    border: none;
+    font-weight : bold;
+    margin-bottom: 3%;
+    border-radius: 4px;
+    padding: 2%;
+    font-size: 15px;
+}
+
+ 
